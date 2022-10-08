@@ -4,9 +4,9 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  passwordText.value = password;
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+  passwordText.value = password;
 }
 
 // Add event listener to generate button
@@ -32,7 +32,6 @@ function generatePassword() {
     let includeSpecialCharacters = confirm("Should we include special characters?");
 
     if (includeLowercase || includeUppercase || includeNumbers || includeSpecialCharacters) {
-      
       if (includeLowercase) {
         for (let i = 0; i < lowercaseArray.length; i++) {
           allowedCharacters.push(lowercaseArray[i])
@@ -61,8 +60,9 @@ function generatePassword() {
         random = Math.floor(Math.random() * allowedCharacters.length);
         passwordArray.push(allowedCharacters[random])
       }
+
       password = passwordArray.join('');
-      return passwordArray;
+      return password;
     } else {
       alert("You must select at least one character type.")
     }
