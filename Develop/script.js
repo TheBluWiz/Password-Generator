@@ -23,41 +23,52 @@ function generatePassword() {
   var passwordArray = [];
   var password;
 
+  function addAllowedCharacters() {
+    if (includeLowercase) {
+      for (let i = 0; i < lowercaseArray.length; i++) {
+        allowedCharacters.push(lowercaseArray[i])
+      }
+    }
+
+    if (includeUppercase) {
+      for (let i = 0; i < uppercaseArray.length; i++) {
+        allowedCharacters.push(uppercaseArray[i])
+      }
+    }
+
+    if (includeNumbers) {
+      for (let i = 0; i < numberArray.length; i++) {
+        allowedCharacters.push(numberArray[i])
+      }
+    }
+
+    if (includeSpecialCharacters) {
+      for (let i = 0; i < specialCharacterArray.length; i++) {
+        allowedCharacters.push(specialCharacterArray[i])
+      }
+    }
+  }
+
   let passwordLength = prompt("Choose a password length between 8 and 128 characters long.");
-  let includeLowercase = confirm("Should we include lowercase characters?");
-  let includeUppercase = confirm("Should we include uppercase characters?");
-  let includeNumbers = confirm("Should we include numbers?");
-  let includeSpecialCharacters = confirm("Should we include special characters?");
 
-  if (includeLowercase) {
-    for (let i = 0; i < lowercaseArray.length; i++) {
-      allowedCharacters.push(lowercaseArray[i])
+  if (passwordLength >= 8 && paswordLength <= 128) {
+    let includeLowercase = confirm("Should we include lowercase characters?");
+    let includeUppercase = confirm("Should we include uppercase characters?");
+    let includeNumbers = confirm("Should we include numbers?");
+    let includeSpecialCharacters = confirm("Should we include special characters?");
+
+    if (passwordLength || includeLowercase || includeUppercase || includeNumbers || includeSpecialCharacters) {
+      addAllowedCharacters();
+      for (let i = 0; i < passwordLength; i++) {
+        random = Math.floor(Math.random() * allowedCharacters.length);
+        passwordArray.push(allowedCharacters[random])
+      }
+      password = passwordArray.join('');
+      return password;
+    } else {
+      alert("You must select at least one character type.")
     }
+  } else {
+    alert(ERROR_UNSUPPORTED_LENGTH);
   }
-
-  if (includeUppercase) {
-    for (let i = 0; i < uppercaseArray.length; i++) {
-      allowedCharacters.push(uppercaseArray[i])
-    }
-  }
-
-  if (includeNumbers) {
-    for (let i = 0; i < numberArray.length; i++) {
-      allowedCharacters.push(numberArray[i])
-    }
-  }
-
-  if (includeSpecialCharacters) {
-    for (let i = 0; i < specialCharacterArray.length; i++) {
-      allowedCharacters.push(specialCharacterArray[i])
-    }
-  }
-  
-  for (let i = 0; i < passwordLength; i++) {
-    random = Math.floor(Math.random() * allowedCharacters.length);
-    passwordArray.push(allowedCharacters[random])
-  }
-
-  password = passwordArray.join();
-  return password;
 }
