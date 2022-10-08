@@ -31,34 +31,33 @@ function generatePassword() {
 
   if (includeLowercase) {
     for (let i = 0; i < lowercaseArray.length; i++) {
-      allowedCharacters.push(lowercaseArray[i]);
+      allowedCharacters.push(lowercaseArray[i])
     }
   }
 
   if (includeUppercase) {
     for (let i = 0; i < uppercaseArray.length; i++) {
-      allowedCharacters.push(uppercaseArray[i]);
+      allowedCharacters.push(uppercaseArray[i])
     }
   }
 
   if (includeNumbers) {
     for (let i = 0; i < numberArray.length; i++) {
-      allowedCharacters.push(numberArray[i]);
+      allowedCharacters.push(numberArray[i])
     }
   }
 
   if (includeSpecialCharacters) {
     for (let i = 0; i < specialCharacterArray.length; i++) {
-      allowedCharacters.push(specialCharacterArray[i]);
+      allowedCharacters.push(specialCharacterArray[i])
     }
   }
   
   for (let i = 0; i < passwordLength; i++) {
-    passwordArray.push(Math.floor(Math.random() * allowedCharacters.length));
+    random = Math.floor(Math.random() * allowedCharacters.length);
+    passwordArray.push(allowedCharacters[random])
   }
 
- password = passwordArray.join();
-console.log(password)
-
- return passwordArray;
+  password = passwordArray.join();
+  return password;
 }

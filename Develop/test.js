@@ -37,7 +37,8 @@ const lowercaseArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "
   }
   
   for (let i = 0; i < passwordLength; i++) {
-    passwordArray.push(Math.floor(Math.random() * allowedCharacters.length))
+    random = Math.floor(Math.random() * allowedCharacters.length);
+    passwordArray.push(allowedCharacters[random])
   }
 
  password = passwordArray.join()
