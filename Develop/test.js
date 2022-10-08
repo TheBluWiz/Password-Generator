@@ -6,32 +6,6 @@ var allowedCharacters = [];
 var passwordArray = [];
 var password;
 
-function addAllowedCharacters() {
-  if (includeLowercase) {
-    for (let i = 0; i < lowercaseArray.length; i++) {
-      allowedCharacters.push(lowercaseArray[i])
-    }
-  }
-
-  if (includeUppercase) {
-    for (let i = 0; i < uppercaseArray.length; i++) {
-      allowedCharacters.push(uppercaseArray[i])
-    }
-  }
-
-  if (includeNumbers) {
-    for (let i = 0; i < numberArray.length; i++) {
-      allowedCharacters.push(numberArray[i])
-    }
-  }
-
-  if (includeSpecialCharacters) {
-    for (let i = 0; i < specialCharacterArray.length; i++) {
-      allowedCharacters.push(specialCharacterArray[i])
-    }
-  }
-}
-
 let passwordLength = prompt("Choose a password length between 8 and 128 characters long.");
 
 if (passwordLength >= 8 && passwordLength <= 128) {
@@ -41,7 +15,31 @@ if (passwordLength >= 8 && passwordLength <= 128) {
   let includeSpecialCharacters = confirm("Should we include special characters?");
 
   if (passwordLength || includeLowercase || includeUppercase || includeNumbers || includeSpecialCharacters) {
-    addAllowedCharacters();
+
+    if (includeLowercase) {
+      for (let i = 0; i < lowercaseArray.length; i++) {
+        allowedCharacters.push(lowercaseArray[i])
+      }
+    }
+
+    if (includeUppercase) {
+      for (let i = 0; i < uppercaseArray.length; i++) {
+        allowedCharacters.push(uppercaseArray[i])
+      }
+    }
+
+    if (includeNumbers) {
+      for (let i = 0; i < numberArray.length; i++) {
+        allowedCharacters.push(numberArray[i])
+      }
+    }
+
+    if (includeSpecialCharacters) {
+      for (let i = 0; i < specialCharacterArray.length; i++) {
+        allowedCharacters.push(specialCharacterArray[i])
+      }
+    }
+    
     for (let i = 0; i < passwordLength; i++) {
       random = Math.floor(Math.random() * allowedCharacters.length);
       passwordArray.push(allowedCharacters[random])
