@@ -14,7 +14,7 @@ if (passwordLength >= 8 && passwordLength <= 128) {
   let includeNumbers = confirm("Should we include numbers?");
   let includeSpecialCharacters = confirm("Should we include special characters?");
 
-  if (passwordLength || includeLowercase || includeUppercase || includeNumbers || includeSpecialCharacters) {
+  if (includeLowercase || includeUppercase || includeNumbers || includeSpecialCharacters) {
 
     if (includeLowercase) {
       for (let i = 0; i < lowercaseArray.length; i++) {
@@ -39,7 +39,7 @@ if (passwordLength >= 8 && passwordLength <= 128) {
         allowedCharacters.push(specialCharacterArray[i])
       }
     }
-    
+
     for (let i = 0; i < passwordLength; i++) {
       random = Math.floor(Math.random() * allowedCharacters.length);
       passwordArray.push(allowedCharacters[random])
