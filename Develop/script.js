@@ -67,6 +67,6 @@ function generatePassword() {
       alert("You must select at least one character type.")
     }
   } else {
-    alert(ERROR_UNSUPPORTED_LENGTH);
+    alert("ERROR_UNSUPPORTED_LENGTH");
   }
 }
