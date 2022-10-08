@@ -51,7 +51,7 @@ function generatePassword() {
 
   let passwordLength = prompt("Choose a password length between 8 and 128 characters long.");
 
-  if (passwordLength >= 8 && paswordLength <= 128) {
+  if (passwordLength >= 8 && passwordLength <= 128) {
     let includeLowercase = confirm("Should we include lowercase characters?");
     let includeUppercase = confirm("Should we include uppercase characters?");
     let includeNumbers = confirm("Should we include numbers?");
