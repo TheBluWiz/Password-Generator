@@ -12,4 +12,4 @@ The goal of this WebAPP is to flexibly generate passwords based off of the requi
 ![webiste render](assets/images/splash-page.png)
 
 ## Deployment
-The finished website can be found: 
+The finished website can be found [here](https://thebluwiz.github.io/Password-Generator/).
