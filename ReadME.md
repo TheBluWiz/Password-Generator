@@ -9,7 +9,7 @@ The goal of this Web App is to flexibly generate passwords based off of the requ
 - Created itterative loop to assign random characters to User password string up to specified password length
 
 ## Example
-![webiste render](assets/images/splash-page.png)
+![webiste render](./Assets/images/splash-page.png)
 
 ## Deployment
 The finished website can be found [here](https://thebluwiz.github.io/Password-Generator/).
