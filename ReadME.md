@@ -15,4 +15,4 @@ The goal of this Web App is to flexibly generate passwords based off of the requ
 The finished website can be found [here](https://thebluwiz.github.io/Password-Generator/).
 
 ## Going Forward
-If I revisit this, I may add exclusions for specific characters as not ALL special characters work with each site. Would also love to know if there are any other comment requirements I've forgotten that could be included here.
+If I revisit this, I may add exclusions for specific characters as not ALL special characters work with each site. Would also love to know if there are any other commmon requirements I've forgotten that could be included here.
